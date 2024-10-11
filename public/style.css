@@ -2,16 +2,12 @@
 	--font-size: 16px;
 	--font-family: sans-serif;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 8px;
 	border: 1px solid;
 	border-radius: 4px;
 	padding: 4px 8px;
 	cursor: text;
-	overflow-x: auto;
-}
-
-.input:focus-within {
-	outline: 2px solid blue;
 }
 
 .chip {
@@ -40,6 +36,12 @@ input {
 	font-size: var(--font-size);
 	font-family: var(--font-family);
 	padding: 3.5px;
+	min-width: 100px;
+	flex-grow: 1;
+}
+
+.input:focus-within {
+	outline: 2px solid blue;
 }
 
 input:focus {
