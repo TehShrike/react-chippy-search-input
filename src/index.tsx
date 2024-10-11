@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ChippyInput from './ChippyInput'
 
 export default () => {
 	const [ counter, setCounter ] = useState(1)
@@ -9,7 +10,7 @@ export default () => {
 		return () => clearInterval(timer)
 	})
 
-	return <h1>
-		Howdy {counter}
-	</h1>
+	return <>
+		<ChippyInput />
+	</>
 }
