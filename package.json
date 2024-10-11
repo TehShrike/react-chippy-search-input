@@ -1,0 +1,22 @@
+{
+  "name": "react-chippy-search-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "run-p dev:*",
+    "dev:build": "node build.js --watch",
+    "dev:serve": "live-server public/"
+  },
+  "author": "TehShrike",
+  "license": "WTFPL",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
