@@ -19,7 +19,7 @@ export default class Dropdown<T extends { description: string }> extends React.C
 		this.state = {
 			input_value: '',
 			input_ref: createRef(),
-			id: Math.random().toString().slice(2)
+			id: crypto.randomUUID()
 		}
 	}
 
@@ -61,7 +61,7 @@ export default class Dropdown<T extends { description: string }> extends React.C
 				{
 					this.props.options.map((option, index) =>
 						<option key={option.description} value={option.description + ':'}>
-							{option.description}
+							{option.description}:
 						</option>)
 				}
 			</datalist>
