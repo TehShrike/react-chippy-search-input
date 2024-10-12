@@ -5,7 +5,6 @@ const build = async({ watch }) => {
 		entryPoints: [ `./src/index.ts` ],
 		bundle: true,
 		treeShaking: true,
-		minify: true,
 		outdir: `public/`,
 		platform: `browser`,
 		format: `esm`,

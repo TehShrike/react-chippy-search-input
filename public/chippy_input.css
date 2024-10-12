@@ -17,7 +17,7 @@
 	border: 1px solid lightslategray;
 	padding: 0 8px;
 	padding-right: 0;
-	border-radius: 6px;
+	border-radius: 4px;
 	font-size: var(--font-size);
 	font-family: var(--font-family);
 	white-space: nowrap;
@@ -28,7 +28,18 @@
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	border-radius: 6px;
+	border-radius: 4px;
+}
+
+.mini_chip {
+	display: flex;
+	align-items: center;
+	border: 1px solid lightgray;
+	padding: 0 8px;
+	border-radius: 4px;
+	font-size: var(--font-size);
+	font-family: var(--font-family);
+	white-space: nowrap;
 }
 
 input {

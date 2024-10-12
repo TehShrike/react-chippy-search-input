@@ -1,16 +1,59 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ChippyInput from './ChippyInput'
+import type { Column, Selection } from './ChippyInput'
 
 export default () => {
-	const [ counter, setCounter ] = useState(1)
+	const [selections,set_selections] = useState<Selection[]>([])
 
-	useEffect(() => {
-		const timer = setInterval(() => setCounter(counter + 1), 1000)
+	const example_columns: Column[] = [{
+		name: 'date',
+		description: 'Date'
+	},{
+		name: 'date',
+		operator: '>',
+		description: 'Date greater than'
+	}, {
+		name: 'date',
+		operator: '<',
+		description: 'Date less than'
+	}, {
+		name: 'name',
+		description: 'Name'
+	}, {
+		name: 'company_name',
+		description: 'Company name'
+	}, {
+		name: 'favorite_child',
+		description: 'Favorite child'
+	}, {
+		name: 'children_count',
+		description: 'Number of children'
+	}, {
+		name: 'children_count',
+		operator: '>',
+		description: 'Number of children greater than'
+	}, {
+		name: 'children_count',
+		operator: '<',
+		description: 'Number of children fewer than'
+	}]
 
-		return () => clearInterval(timer)
-	})
+	return <div>
+		<ChippyInput
+			columns={example_columns}
+			on_selections_change={set_selections}
+		/>
 
-	return <>
-		<ChippyInput />
-	</>
+		<hr/>
+
+		<ul>
+			{
+				selections.map((selection, index) => <li key={index}>
+					<strong>name:</strong> <code>{selection.name}</code>,{' '}
+					<strong>operator:</strong> <code>{selection.operator}</code>,{' '}
+					<strong>value:</strong> <code>{selection.value}</code>{' '}
+				</li>)
+			}
+		</ul>
+	</div>
 }
