@@ -51,7 +51,7 @@ input {
 	flex-grow: 1;
 }
 
-.input:focus-within {
+.input:has(input:focus) {
 	outline: 2px solid blue;
 }
 
