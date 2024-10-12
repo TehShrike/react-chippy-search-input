@@ -52,7 +52,7 @@ export default class Dropdown<T extends { description: string }> extends React.C
 		return <>
 			<input
 				type="text"
-				onKeyDown={e => this.on_keydown(e)}
+				onKeyDown={event => this.on_keydown(event)}
 				onInput={event => this.on_input(event)}
 				ref={this.state.input_ref}
 				list={this.state.id}
