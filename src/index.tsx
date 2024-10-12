@@ -11,11 +11,11 @@ export default () => {
 	},{
 		name: 'date',
 		operator: '>',
-		description: 'Date greater than'
+		description: 'Date after'
 	}, {
 		name: 'date',
 		operator: '<',
-		description: 'Date less than'
+		description: 'Date before'
 	}, {
 		name: 'name',
 		description: 'Name'
@@ -39,21 +39,40 @@ export default () => {
 	}]
 
 	return <div>
-		<ChippyInput
-			columns={example_columns}
-			on_selections_change={set_selections}
-		/>
-
-		<hr/>
-
-		<ul>
+		<strong>
+			Some options you could type in:
+		</strong>
+		<ul className='example_list'>
 			{
-				selections.map((selection, index) => <li key={index}>
-					<strong>name:</strong> <code>{selection.name}</code>,{' '}
-					<strong>operator:</strong> <code>{selection.operator}</code>,{' '}
-					<strong>value:</strong> <code>{selection.value}</code>{' '}
-				</li>)
+				example_columns.map((column, index) => <li key={index}>{column.description.toLocaleLowerCase()}</li>)
 			}
 		</ul>
+
+		<label>
+			Search filter
+			<ChippyInput
+				columns={example_columns}
+				on_selections_change={set_selections}
+			/>
+		</label>
+
+		{
+			selections.length
+			?
+			<>
+				<hr/>
+				<ul>
+					{
+						selections.map((selection, index) => <li key={index}>
+							<strong>name:</strong> <code>{selection.name}</code>,{' '}
+							<strong>operator:</strong> <code>{selection.operator}</code>,{' '}
+							<strong>value:</strong> <code>{selection.value}</code>{' '}
+						</li>)
+					}
+				</ul>
+			</>
+			:
+			null
+		}
 	</div>
 }
